@@ -9,7 +9,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # проверка, что в адресе есть "login"
-        assert LoginPageLocators.SUBSTRING_LOGIN in self.browser.current_url, "No 'login' in url on this page!"
+        assert LoginPageLocators.SUBSTRING_URL_ON_LOGIN_PAGE in self.browser.current_url, "No 'login' in url on this page!"
 
     def should_be_login_form(self):
         # проверка наличия формы логина
