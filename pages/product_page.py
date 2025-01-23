@@ -24,3 +24,13 @@ class ProductPage(BasePage):
     def should_be_right_price_for_book(self, price_to_compare):
         # проверка сообщения о цене книги в корзине
         assert self.browser.find_element(*ProductPageLocators.BOOK_PRICE_ON_MESSAGE).text == price_to_compare, "Wrong price for the book!"
+
+    def should_not_be_success_message(self):
+        # проверка, что элемент не появился, так как не должен был
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_disappear(self):
+        # проверка, что элемент исчез
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Message is not disappeared, but should"
