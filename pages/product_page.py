@@ -19,11 +19,13 @@ class ProductPage(BasePage):
 
     def should_be_right_book_name(self, book_to_compare):
         # проверка сообщения о добавлении в корзину нужной книги
-        assert self.browser.find_element(*ProductPageLocators.BOOK_NAME_ON_MESSAGE).text == book_to_compare, "No added book in a cart!"
+        assert self.browser.find_element(*ProductPageLocators.BOOK_NAME_ON_MESSAGE).text == book_to_compare, \
+            "No added book in a cart!"
 
     def should_be_right_price_for_book(self, price_to_compare):
         # проверка сообщения о цене книги в корзине
-        assert self.browser.find_element(*ProductPageLocators.BOOK_PRICE_ON_MESSAGE).text == price_to_compare, "Wrong price for the book!"
+        assert self.browser.find_element(*ProductPageLocators.BOOK_PRICE_ON_MESSAGE).text == price_to_compare, \
+            "Wrong price for the book!"
 
     def should_not_be_success_message(self):
         # проверка, что элемент не появился, так как не должен был
