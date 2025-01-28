@@ -6,6 +6,7 @@ class BasePageLocators():
     BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-group .btn")
     BASKET_BUTTON_EN_GB = (By.LINK_TEXT, "View basket")
     BASKET_BUTTON_RU = (By.LINK_TEXT, "Посмотреть корзину")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class MainPageLocators():
     MAIN_PAGE_LINK = "http://selenium1py.pythonanywhere.com/"
@@ -13,9 +14,13 @@ class MainPageLocators():
 
 class LoginPageLocators():
     LOGIN_PAGE_LINK = "http://selenium1py.pythonanywhere.com/accounts/login/"
-    SUBSTRING_URL_ON_LOGIN_PAGE = "login"
+    SUBSTRING_URL_LOGIN = "login"
     LOGIN_FORM = (By.ID, "login_form")
     REGISTRATION_FORM = (By.ID, "register_form")
+    EMAIL_ADDRESS_INPUT = (By.ID, "id_registration-email")
+    PASSWORD_INPUT = (By.ID, "id_registration-password1")
+    PASSWORD_CONFIRM_INPUT = (By.ID, "id_registration-password2")
+    REGISTRATION_BUTTON = (By.NAME, "registration_submit")
 
 class ProductPageLocators():
     PRODUCT_PAGE_LINK = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
