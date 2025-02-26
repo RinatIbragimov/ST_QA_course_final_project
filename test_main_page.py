@@ -11,8 +11,8 @@ class TestLoginFromMainPage():
 
       # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
       page = MainPage(browser, link)
-      # открываем страницу
       page.open()
+
       # выполняем метод страницы — переходим на страницу логина
       page.go_to_login_page()
       login_page = LoginPage(browser, browser.current_url)
@@ -33,10 +33,9 @@ def test_guest_should_see_login_page(browser):
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
    link = MainPageLocators.MAIN_PAGE_LINK
 
-   # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
    page = MainPage(browser, link)
-   # открываем нужную страницу
    page.open()
+
    page.go_to_basket_page()
    cart_page = BasketPage(browser, browser.current_url)
    # проверка, что корзина пустая
